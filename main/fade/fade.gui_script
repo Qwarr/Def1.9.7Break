@@ -1,0 +1,70 @@
+local globals = require("globals")
+local broadcast = require("ludobits.m.broadcast")
+
+local function fade_done(self, node, data)
+	broadcast.send("fade", {status = data.status})
+end
+
+
+function init(self)
+	local color = vmath.vector4(0, 0, 0, 0)
+	local width, height = gui.get_width(), gui.get_height()
+	local position = vmath.vector3(width / 2, height / 2, 0)
+	local size = vmath.vector3(width * 1, height * 1, 0)
+	local shade = gui.new_box_node(position, size)
+	gui.set_render_order(15)
+	gui.set_adjust_mode(shade, gui.ADJUST_ZOOM)
+	gui.set_color(shade, color)
+	self.shade = shade
+	broadcast.register("fade")
+end
+
+function on_message(self, message_id, message, sender)
+	
+	
+	local timer = message.timer or 1
+	if timer == 0 then
+		timer = 0.2
+	end
+
+	local fade_color = message.color or vmath.vector3(0,0,0)
+	
+	if message_id == hash('fade') and message.command == FADE_OUT then
+		if not message.timer then print("FADE missing message.timer value!") end
+		print('FADE_OUT timer: '.. timer)
+		gui.set_color(self.shade, vmath.vector4(fade_color.x, fade_color.y, fade_color.z, 0))
+		gui.animate(
+			self.shade,
+			gui.PROP_COLOR,
+			vmath.vector4(fade_color.x, fade_color.y, fade_color.z, 1),
+			gui.EASING_INOUTQUAD,
+			timer,
+			0.0,
+			function(self, node)
+				local data = {}
+				data.status = FADE_OUT_DONE
+				fade_done(self, node, data)
+			end
+		)
+	end
+	
+	if message_id == hash('fade') and message.command == FADE_IN then
+		if not message.timer then print("FADE missing message.timer value!") end
+		print('FADE_IN timer: '.. timer)
+		gui.set_color(self.shade, vmath.vector4(fade_color.x, fade_color.y, fade_color.z, 1))
+		gui.animate(
+			self.shade,
+			gui.PROP_COLOR,
+			vmath.vector4(fade_color.x, fade_color.y, fade_color.z, 0),
+			gui.EASING_INOUTQUAD,
+			timer,
+			0.0,
+			function(self, node)
+				local data = {}
+				data.status = FADE_IN_DONE
+				fade_done(self, node, data)
+			end
+		)
+	end
+
+end

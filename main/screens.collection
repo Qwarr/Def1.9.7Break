@@ -1,0 +1,10 @@
+name: "default"
+instances {
+  id: "loader"
+  prototype: "/screens/splash/setup/splash.go"
+}
+instances {
+  id: "game"
+  prototype: "/screens/game/setup/game.go"
+}
+scale_along_z: 0
