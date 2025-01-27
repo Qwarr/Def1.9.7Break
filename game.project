@@ -2,9 +2,7 @@
 title = Def1.9.7Break
 custom_resources = imports/html
 dependencies#0 = https://github.com/britzl/monarch/archive/master.zip
-dependencies#1 = https://github.com/GameAnalytics/defold-openssl/archive/master.zip
-dependencies#2 = https://github.com/rgrams/rendercam/archive/v1.0.2.zip
-dependencies#3 = https://github.com/britzl/ludobits/archive/refs/tags/7.5.0.zip
+dependencies#1 = https://github.com/britzl/ludobits/archive/refs/tags/7.5.0.zip
 
 [gameanalytics]
 game_key_android = 
@@ -16,7 +14,6 @@ enable_event_submission = 1
 
 [bootstrap]
 main_collection = /main/main.collectionc
-render = /rendercam/rendercam.renderc
 
 [input]
 game_binding = /input/game.input_bindingc
