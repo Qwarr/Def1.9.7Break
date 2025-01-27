@@ -12,6 +12,10 @@ fonts {
   font: "/builtins/fonts/default.font"
 }
 textures {
+  name: "small"
+  texture: "/assets/atlases/small.atlas"
+}
+textures {
   name: "mega"
   texture: "/assets/atlases/mega.atlas"
 }
@@ -61,7 +65,7 @@ nodes {
     z: 0.5
   }
   type: TYPE_BOX
-  texture: "mega/logo"
+  texture: "mega/logo_blue_512"
   id: "box"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO

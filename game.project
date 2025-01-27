@@ -4,14 +4,6 @@ custom_resources = imports/html
 dependencies#0 = https://github.com/britzl/monarch/archive/master.zip
 dependencies#1 = https://github.com/britzl/ludobits/archive/refs/tags/7.5.0.zip
 
-[gameanalytics]
-game_key_android = 
-secret_key_android = 
-build_android = 1.0
-enable_info_log = 0
-enable_verbose_log = 0
-enable_event_submission = 1
-
 [bootstrap]
 main_collection = /main/main.collectionc
 
