@@ -10,6 +10,6 @@ components {
 embedded_components {
   id: "collectionproxy"
   type: "collectionproxy"
-  data: "collection: \"/screens/splash/setup/splash.collection\"\n"
+  data: "collection: \"/screens/game/setup/game.collection\"\n"
   ""
 }

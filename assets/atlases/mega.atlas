@@ -1,4 +1,7 @@
 images {
   image: "/assets/misc/logo.png"
 }
+images {
+  image: "/assets/misc/logo_copy.png"
+}
 extrude_borders: 2

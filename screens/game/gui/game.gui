@@ -1,4 +1,4 @@
-script: "/screens/splash/gui/splash.gui_script"
+script: "/screens/game/gui/game.gui_script"
 fonts {
   name: "system_font"
   font: "/builtins/fonts/default.font"
@@ -13,8 +13,26 @@ fonts {
 }
 nodes {
   position {
+    x: 158.0
+    y: 275.0
+  }
+  size {
+    x: 400.0
+    y: 600.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "box"
+  inherit_alpha: true
+}
+nodes {
+  position {
     x: 160.0
-    y: 34.0
+    y: 301.0
   }
   scale {
     x: 0.4
@@ -31,8 +49,7 @@ nodes {
     z: 0.8
   }
   type: TYPE_TEXT
-  text: "Hand crafted in the United States of America.\n"
-  "Copyright \302\251 Subsoap. All rights reserved."
+  text: "Copyright "
   font: "rubik-regular-32-df"
   id: "copyright_notice"
   outline {
