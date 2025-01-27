@@ -7,8 +7,8 @@ dependencies#2 = https://github.com/rgrams/rendercam/archive/v1.0.2.zip
 dependencies#3 = https://github.com/britzl/ludobits/archive/refs/tags/7.5.0.zip
 
 [gameanalytics]
-game_key_android = d9a4a0247ca1995342a9a1e1b882c8f3
-secret_key_android = 50fc25dc29b1a5753faa8beb62ff525af610a59b
+game_key_android = 
+secret_key_android = 
 build_android = 1.0
 enable_info_log = 0
 enable_verbose_log = 0
@@ -92,6 +92,6 @@ max_count = 32
 auto_finish_transactions = 0
 
 [admob]
-ios_app_id = ca-app-pub-7234251215809387~5061316224
-android_app_id = ca-app-pub-7234251215809387~7879051256
+ios_app_id = 
+android_app_id = 
 
